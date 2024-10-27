@@ -10,12 +10,12 @@ export default function CourcesList() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(listCourses());
+    dispatch();
   }, []);
 
   return (
     <div>
-      {loading && <CardShimmer/>}
+      {loading && <CardShimmer />}
       {courses.map((course) => {
         return (
           <div key={course.title} className=" mb-3">

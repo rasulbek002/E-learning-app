@@ -1,40 +1,21 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+import { baseEndpoint } from "../../client/constants";
 
 export const listCourses = createAsyncThunk("courses", async (args) => {
-  console.log(args);
+  const { data } = await axios(`${baseEndpoint}/courses`);
 
-  const data = await new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const course = [
-        {
-          title: "Html",
-          description: "Fun way of learning HTML",
-          image:
-            "https://upload.wikimedia.org/wikipedia/commons/thu…ordmark.svg/512px-HTML5_logo_and_wordmark.svg.png",
-          time: "33 hours",
-          rating: "3.5",
-        },
-        {
-          title: "Marketing",
-          description: "Sell your products to everyone",
-          image:
-            "https://www.intandemcommunications.co.uk/wp-content/uploads/2019/08/What-is-marketing-500x333.jpg",
-          time: "10 hours",
-          rating: "5",
-        },
-        {
-          title: "Nodejs",
-          description: "Become full-stack developer in a month",
-          image:
-            "https://miro.medium.com/v2/resize:fit:828/format:webp/1*TY9uBBO9leUbRtlXmQBiug.png",
-          time: "100 hours",
-          rating: "4.5",
-        },
-      ];
+  if (args?.filterValue && args?.filterValue !== "all") {
+    const courses = data.filter((item) => {
+      if (item.tags.includes(args.filterValue)) {
+        return true;
+      }
 
-      resolve(course);
-    }, 2000);
-  });
+      return false;
+    });
+
+    return courses;
+  }
 
   return data;
 });

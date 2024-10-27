@@ -7,11 +7,7 @@ import timeLogo from "../../assets/time.png";
 import Button from "../ui/Button";
 
 export default function CourseCard(props) {
-  const { image, title, description, rating, time } = props;
-
-  function onViewDetails() {
-    console.log("onViewDetails");
-  }
+  const { image, title, description, rating, duration } = props;
 
   return (
     <div className="bg-[#D9D9D9] p-2 flex justify-between items-center rounded-md ">
@@ -22,7 +18,7 @@ export default function CourseCard(props) {
       </div>
       <div className=" flex gap-1 items-center">
         <img className=" w-5 h-5" src={timeLogo} alt="" />
-        <p>{time}</p>
+        <p>{duration} hours</p>
       </div>
       <div className=" flex gap-1 items-center">
         <img className=" w-5 h-5" src={flame} alt="" />

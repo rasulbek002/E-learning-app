@@ -1,14 +1,10 @@
 import "./App.css";
-import ReactLogo from "./assets/react.svg";
-import CourcesList from "./components/courses/CourcesList";
-import CourseCard from "./components/courses/CourseCard";
-import CoursesControlBar from "./components/courses/CoursesControlBar";
+import Courses from "./pages/courses/Courses";
 
 function App() {
   return (
     <div>
-      <CoursesControlBar />
-      <CourcesList />
+      <Courses />
     </div>
   );
 }

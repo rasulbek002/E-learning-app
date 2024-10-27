@@ -1,0 +1,57 @@
+
+
+states
+life-cycle of component
+useContext
+
+// Advanced topics and topics that we need to cover
+HOF
+
+
+React:
+
+re-rendering // useMemo, useCallback React.memo()
+react-form
+react profile // it is a way to find out unnecessary re-renders
+class-component 
+Authorization, authentication: JWT - json web token
+customHooks
+
+butch update
+useRef,
+
+related topics
+reconciliation - fiber
+key-index
+
+Javascript
+primitives and complex types?
+primitive: number, string, boolean,
+new Map(), new Set()
+new Map() new Set//
+asyc/sync
+
+complex: object, array
+
+To cover
+Complex types
+v8 engine: runs code, compiles, inperprets, makes it into mashine code,
+garbage collector: 
+async/sync || event loop
+A whole lesson 
+
+// Topics left to have a conversation;
+
+To cover
+Unit tests ( with jest and react-testing-library )
+
+Typescript: sub language of javascript
+// A whole lesson about typescript. How react uses typescript?
+
+// Algorithms and big O notation
+
+// HTML and CSS
+animation, optimization and browser repaint and reflow stages
+
+// Rest API and Graphql
+Do a little bit of a conversation about it 

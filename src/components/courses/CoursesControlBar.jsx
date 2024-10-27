@@ -1,30 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { listCourses } from "./redux/courses-slice";
+import { filters } from "./helper";
 
 export default function CoursesControlBar() {
   const { filterByTag } = useSelector((state) => state.courses);
 
   const dispatch = useDispatch();
-
-  const filters = [
-    {
-      title: "All Courses",
-      value: "all",
-    },
-    {
-      title: "The Newest",
-      value: "newest",
-    },
-    {
-      title: "Top Rated",
-      value: "topRated",
-    },
-    {
-      title: "Most Popular",
-      value: "popular",
-    },
-  ];
 
   function onClickFilter(filterValue) {
     dispatch(
